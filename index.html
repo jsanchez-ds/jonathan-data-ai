@@ -235,10 +235,35 @@
           te oriento hacia quién sí.
         </p>
         <div class="cta-actions">
-          <!-- Reemplaza el href con tu link de Cal.com -->
           <a class="btn btn-primary btn-lg" id="bookCall" href="https://cal.com/jonasanchez" target="_blank" rel="noopener" data-i18n="cta.book">Agendar llamada</a>
           <a class="btn btn-ghost btn-lg" id="emailMe" href="mailto:jonathan.sanchez.ep@gmail.com" data-i18n="cta.email">Escríbeme</a>
         </div>
+
+        <div class="cta-divider"><span data-i18n="cta.or">o déjame tus datos</span></div>
+
+        <form class="lead-form" id="leadForm" novalidate>
+          <div class="lf-row">
+            <label class="lf-field">
+              <span class="lf-label" data-i18n="form.name">Nombre</span>
+              <input type="text" name="contacto" autocomplete="name" data-i18n-ph="form.namePh" placeholder="Tu nombre" />
+            </label>
+            <label class="lf-field">
+              <span class="lf-label" data-i18n="form.email">Email</span>
+              <input type="email" name="email" autocomplete="email" required data-i18n-ph="form.emailPh" placeholder="tu@empresa.com" />
+            </label>
+          </div>
+          <label class="lf-field">
+            <span class="lf-label" data-i18n="form.company">Empresa</span>
+            <input type="text" name="empresa" autocomplete="organization" required data-i18n-ph="form.companyPh" placeholder="Nombre de tu empresa" />
+          </label>
+          <label class="lf-field">
+            <span class="lf-label" data-i18n="form.message">¿En qué te ayudo?</span>
+            <textarea name="notas" rows="3" data-i18n-ph="form.messagePh" placeholder="Cuéntame brevemente tu problema de datos o IA"></textarea>
+          </label>
+          <button type="submit" class="btn btn-primary btn-lg lf-submit" id="leadSubmit" data-i18n="form.submit">Enviar</button>
+          <p class="lf-status" id="leadStatus" role="status" aria-live="polite"></p>
+        </form>
+
         <p class="cta-fine" data-i18n="cta.fine">Respondo en menos de 24 h · Español / English</p>
       </div>
     </section>

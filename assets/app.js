@@ -63,6 +63,21 @@ const I18N = {
     "cta.sub": "Agenda una llamada de 20 minutos. Si puedo ayudarte, te lo digo. Si no, te oriento hacia quién sí.",
     "cta.book": "Agendar llamada",
     "cta.email": "Escríbeme",
+    "cta.or": "o déjame tus datos",
+    "form.name": "Nombre",
+    "form.namePh": "Tu nombre",
+    "form.email": "Email",
+    "form.emailPh": "tu@empresa.com",
+    "form.company": "Empresa",
+    "form.companyPh": "Nombre de tu empresa",
+    "form.message": "¿En qué te ayudo?",
+    "form.messagePh": "Cuéntame brevemente tu problema de datos o IA",
+    "form.submit": "Enviar",
+    "form.sending": "Enviando…",
+    "form.ok": "¡Gracias! Te respondo dentro de 24 h.",
+    "form.errEmail": "Pon un email válido.",
+    "form.errCompany": "Falta el nombre de tu empresa.",
+    "form.err": "Algo falló. Escríbeme directo a jonathan.sanchez.ep@gmail.com.",
     "cta.fine": "Respondo en menos de 24 h · Español / English",
     "footer.tagline": "Forecasting & AI · Energía · Telecom · Minería",
     "footer.linkedin": "LinkedIn"
@@ -130,6 +145,21 @@ const I18N = {
     "cta.sub": "Book a 20-minute call. If I can help, I'll tell you. If not, I'll point you to who can.",
     "cta.book": "Book a call",
     "cta.email": "Email me",
+    "cta.or": "or leave your details",
+    "form.name": "Name",
+    "form.namePh": "Your name",
+    "form.email": "Email",
+    "form.emailPh": "you@company.com",
+    "form.company": "Company",
+    "form.companyPh": "Your company name",
+    "form.message": "How can I help?",
+    "form.messagePh": "Briefly tell me your data or AI problem",
+    "form.submit": "Send",
+    "form.sending": "Sending…",
+    "form.ok": "Thanks! I'll get back to you within 24h.",
+    "form.errEmail": "Enter a valid email.",
+    "form.errCompany": "Your company name is missing.",
+    "form.err": "Something failed. Email me directly at jonathan.sanchez.ep@gmail.com.",
     "cta.fine": "I reply within 24h · Español / English",
     "footer.tagline": "Forecasting & AI · Energy · Telecom · Mining",
     "footer.linkedin": "LinkedIn"
@@ -152,10 +182,19 @@ function applyLang(lang) {
     }
     el.textContent = val;
   });
+  document.querySelectorAll("[data-i18n-ph]").forEach((el) => {
+    const val = dict[el.getAttribute("data-i18n-ph")];
+    if (val != null) el.setAttribute("placeholder", val);
+  });
   document.querySelectorAll(".lang-opt").forEach((o) => {
     o.classList.toggle("is-active", o.dataset.set === lang);
   });
   try { localStorage.setItem("lang", lang); } catch (_) {}
+}
+
+function t(key) {
+  const lang = document.documentElement.dataset.lang || "es";
+  return (I18N[lang] && I18N[lang][key]) || (I18N.es && I18N.es[key]) || key;
 }
 
 (function initLang() {
@@ -176,6 +215,65 @@ function applyLang(lang) {
 // ---------- year ----------
 const yearEl = document.getElementById("year");
 if (yearEl) yearEl.textContent = new Date().getFullYear();
+
+// ---------- lead form -> Supabase ----------
+const SUPABASE_URL = "https://zwasrzkepwyfmsyaefqb.supabase.co";
+const SUPABASE_KEY = "sb_publishable_1ks7pnpE5_yMUGkFjsT9LA_1rfiYw5g";
+
+(function initLeadForm() {
+  const form = document.getElementById("leadForm");
+  if (!form) return;
+  const statusEl = document.getElementById("leadStatus");
+  const submitBtn = document.getElementById("leadSubmit");
+
+  const setStatus = (key, type) => {
+    if (!statusEl) return;
+    statusEl.textContent = t(key);
+    statusEl.dataset.type = type || "";
+  };
+
+  form.addEventListener("submit", async (e) => {
+    e.preventDefault();
+    const data = new FormData(form);
+    const email = (data.get("email") || "").toString().trim();
+    const empresa = (data.get("empresa") || "").toString().trim();
+
+    if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)) { setStatus("form.errEmail", "err"); return; }
+    if (!empresa) { setStatus("form.errCompany", "err"); return; }
+
+    const payload = {
+      contacto: (data.get("contacto") || "").toString().trim() || null,
+      email,
+      empresa,
+      notas: (data.get("notas") || "").toString().trim() || null,
+      canal: "web",
+      source: "web_form"
+    };
+
+    submitBtn.disabled = true;
+    setStatus("form.sending", "");
+
+    try {
+      const res = await fetch(`${SUPABASE_URL}/rest/v1/leads`, {
+        method: "POST",
+        headers: {
+          "apikey": SUPABASE_KEY,
+          "Authorization": `Bearer ${SUPABASE_KEY}`,
+          "Content-Type": "application/json",
+          "Prefer": "return=minimal"
+        },
+        body: JSON.stringify(payload)
+      });
+      if (!res.ok) throw new Error(`HTTP ${res.status}`);
+      form.reset();
+      setStatus("form.ok", "ok");
+    } catch (_) {
+      setStatus("form.err", "err");
+    } finally {
+      submitBtn.disabled = false;
+    }
+  });
+})();
 
 // ---------- reveal on scroll ----------
 (function initReveal() {
