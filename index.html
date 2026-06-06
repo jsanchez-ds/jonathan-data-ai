@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="es" data-lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title data-i18n="meta.title">Senior Data Scientist · Forecasting & AI para Energía, Telecom y Minería</title>
+  <meta name="description" data-i18n="meta.desc" content="Modelos de forecasting, RAG y agentes de IA en producción para utilities, telecom y minería. LatAm + US. Entregas de alcance fijo." />
+  <meta name="theme-color" content="#0a0e14" />
+  <meta property="og:title" content="Senior Data Scientist · Forecasting & AI" />
+  <meta property="og:description" content="Forecasting, RAG y agentes de IA en producción para energía, telecom y minería." />
+  <meta property="og:type" content="website" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/styles.css" />
+</head>
+<body>
+  <div class="grain" aria-hidden="true"></div>
+
+  <header class="nav">
+    <a class="brand" href="#top">
+      <span class="brand-mark">JV</span>
+      <span class="brand-name" data-i18n="nav.brand">Jonathan · Data &amp; AI</span>
+    </a>
+    <nav class="nav-links" aria-label="Main">
+      <a href="#services" data-i18n="nav.services">Servicios</a>
+      <a href="#proof" data-i18n="nav.proof">Trabajo</a>
+      <a href="#process" data-i18n="nav.process">Proceso</a>
+      <a class="nav-cta" href="#contact" data-i18n="nav.cta">Agendar llamada</a>
+    </nav>
+    <button id="langToggle" class="lang-toggle" aria-label="Switch language">
+      <span class="lang-opt is-active" data-set="es">ES</span>
+      <span class="lang-sep">/</span>
+      <span class="lang-opt" data-set="en">EN</span>
+    </button>
+  </header>
+
+  <main id="top">
+    <!-- HERO -->
+    <section class="hero">
+      <div class="hero-eyebrow">
+        <span class="pulse"></span>
+        <span data-i18n="hero.eyebrow">Disponible para proyectos · LatAm + US · Remoto</span>
+      </div>
+      <h1 class="hero-title">
+        <span data-i18n="hero.title1">Modelos de IA y forecasting</span>
+        <span class="accent" data-i18n="hero.title2">que llegan a producción.</span>
+      </h1>
+      <p class="hero-sub" data-i18n="hero.sub">
+        Senior Data Scientist especializado en energía, telecom y minería. Construyo
+        sistemas de predicción, RAG y agentes de IA con alcance fijo y entrega real —
+        no demos que mueren en un notebook.
+      </p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="#contact" data-i18n="hero.ctaPrimary">Agendar llamada gratis</a>
+        <a class="btn btn-ghost" href="#services" data-i18n="hero.ctaSecondary">Ver servicios</a>
+      </div>
+      <div class="hero-stack">
+        <span data-i18n="hero.stackLabel">Stack en producción</span>
+        <div class="stack-row">
+          <span>Python</span><span>Databricks</span><span>MLflow</span><span>Spark</span>
+          <span>Kafka</span><span>RAG</span><span>LLM Agents</span><span>Supabase</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- TRUST STRIP -->
+    <section class="trust">
+      <p class="trust-line" data-i18n="trust.line">
+        Modelos VPTO/B2B en producción · Pipelines Medallion · Forecasting energético ·
+        RAG sobre documentación técnica · Mantenimiento predictivo industrial
+      </p>
+    </section>
+
+    <!-- SERVICES -->
+    <section id="services" class="section">
+      <div class="section-head">
+        <span class="section-kicker" data-i18n="services.kicker">Servicios productizados</span>
+        <h2 class="section-title" data-i18n="services.title">Alcance fijo. Precio fijo. Entrega real.</h2>
+        <p class="section-lead" data-i18n="services.lead">
+          Sin tarifas por hora ambiguas. Eliges un paquete, sabes qué recibes y cuándo.
+        </p>
+      </div>
+
+      <div class="cards">
+        <article class="card card-feature">
+          <div class="card-num">01</div>
+          <h3 data-i18n="svc1.title">Asistente RAG sobre tus documentos</h3>
+          <p data-i18n="svc1.desc">
+            Un asistente de IA que responde sobre tus contratos, manuales, normativa o
+            base técnica. Con citas a la fuente. Login y panel incluido.
+          </p>
+          <ul class="card-list">
+            <li data-i18n="svc1.b1">Ingesta de tus PDFs / datos</li>
+            <li data-i18n="svc1.b2">Respuestas con citas verificables</li>
+            <li data-i18n="svc1.b3">Auth + panel (Clerk + Supabase)</li>
+          </ul>
+          <div class="card-foot">
+            <span class="price" data-i18n="svc1.price">Desde USD 2.500</span>
+            <span class="price-sub" data-i18n="svc1.priceSub">+ mantención opcional</span>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="card-num">02</div>
+          <h3 data-i18n="svc2.title">Modelo de forecasting / predicción</h3>
+          <p data-i18n="svc2.desc">
+            Demanda, consumo, churn, RUL de equipos. Modelo validado, métricas honestas
+            y pipeline reproducible — no un score que no se puede replicar.
+          </p>
+          <ul class="card-list">
+            <li data-i18n="svc2.b1">EDA + feature engineering</li>
+            <li data-i18n="svc2.b2">Validación temporal correcta</li>
+            <li data-i18n="svc2.b3">Pipeline + API de inferencia</li>
+          </ul>
+          <div class="card-foot">
+            <span class="price" data-i18n="svc2.price">Desde USD 3.000</span>
+            <span class="price-sub" data-i18n="svc2.priceSub">según complejidad de datos</span>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="card-num">03</div>
+          <h3 data-i18n="svc3.title">Dashboard + insights accionables</h3>
+          <p data-i18n="svc3.desc">
+            Conecto tus datos y entrego un dashboard con los 3-5 hallazgos que mueven la
+            aguja. Pensado para decisión, no para decorar.
+          </p>
+          <ul class="card-list">
+            <li data-i18n="svc3.b1">Conexión a tu fuente de datos</li>
+            <li data-i18n="svc3.b2">Dashboard interactivo</li>
+            <li data-i18n="svc3.b3">Informe con hallazgos priorizados</li>
+          </ul>
+          <div class="card-foot">
+            <span class="price" data-i18n="svc3.price">Desde USD 1.500</span>
+            <span class="price-sub" data-i18n="svc3.priceSub">entrega en ~5 días</span>
+          </div>
+        </article>
+
+        <article class="card card-wide">
+          <div class="card-num">04</div>
+          <h3 data-i18n="svc4.title">Automatización con agentes de IA (N8N)</h3>
+          <p data-i18n="svc4.desc">
+            Conecto tus sistemas (CRM, email, Stripe, datos) y automatizo procesos con
+            flujos de IA: clasificación, respuestas, reportes, enriquecimiento de leads.
+          </p>
+          <div class="card-foot">
+            <span class="price" data-i18n="svc4.price">Desde USD 1.800</span>
+            <span class="price-sub" data-i18n="svc4.priceSub">+ retainer mensual opcional</span>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- PROOF -->
+    <section id="proof" class="section section-dark">
+      <div class="section-head">
+        <span class="section-kicker" data-i18n="proof.kicker">Trabajo real</span>
+        <h2 class="section-title" data-i18n="proof.title">Sistemas, no slides.</h2>
+        <p class="section-lead" data-i18n="proof.lead">
+          Una selección de proyectos construidos de punta a punta.
+        </p>
+      </div>
+
+      <div class="proof-grid">
+        <article class="proof-item">
+          <div class="proof-tag" data-i18n="p1.tag">Telecom · Producción</div>
+          <h3 data-i18n="p1.title">Modelos VPTO / B2B Starlink</h3>
+          <p data-i18n="p1.desc">Predicción de consumo y ruteo a nivel cliente sobre bases diarias de millones de registros. En uso real.</p>
+        </article>
+        <article class="proof-item">
+          <div class="proof-tag" data-i18n="p2.tag">Energía · Forecasting</div>
+          <h3 data-i18n="p2.title">Forecasting energético (ENTSO-E)</h3>
+          <p data-i18n="p2.desc">Pipeline Medallion en Databricks + MLflow para predicción de demanda eléctrica.</p>
+        </article>
+        <article class="proof-item">
+          <div class="proof-tag" data-i18n="p3.tag">IA · RAG</div>
+          <h3 data-i18n="p3.title">RAG sobre papers de energía</h3>
+          <p data-i18n="p3.desc">Asistente de búsqueda semántica con Groq + Qdrant sobre literatura técnica.</p>
+        </article>
+        <article class="proof-item">
+          <div class="proof-tag" data-i18n="p4.tag">Minería · Mantenimiento</div>
+          <h3 data-i18n="p4.title">Mantenimiento predictivo (RUL)</h3>
+          <p data-i18n="p4.desc">Estimación de vida útil remanente con Weibull/Cox + LSTM y detección de anomalías.</p>
+        </article>
+        <article class="proof-item">
+          <div class="proof-tag" data-i18n="p5.tag">Procesos · Calidad</div>
+          <h3 data-i18n="p5.title">Forecasting de calidad de flotación</h3>
+          <p data-i18n="p5.desc">Predicción de calidad de proceso mineral sobre datos reales de planta.</p>
+        </article>
+        <article class="proof-item">
+          <div class="proof-tag" data-i18n="p6.tag">Streaming · Real-time</div>
+          <h3 data-i18n="p6.title">Agente de red en tiempo real</h3>
+          <p data-i18n="p6.desc">Kafka + Spark Streaming con un agente LLM que unifica predicción y consulta.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- PROCESS -->
+    <section id="process" class="section">
+      <div class="section-head">
+        <span class="section-kicker" data-i18n="process.kicker">Cómo trabajamos</span>
+        <h2 class="section-title" data-i18n="process.title">Claro y sin sorpresas.</h2>
+      </div>
+      <ol class="steps">
+        <li class="step">
+          <span class="step-n">1</span>
+          <h3 data-i18n="step1.title">Llamada de 20 min</h3>
+          <p data-i18n="step1.desc">Entiendo tu problema y te digo si puedo ayudarte. Gratis, sin compromiso.</p>
+        </li>
+        <li class="step">
+          <span class="step-n">2</span>
+          <h3 data-i18n="step2.title">Propuesta de alcance fijo</h3>
+          <p data-i18n="step2.desc">Qué entrego, cuándo y a qué precio. Lo apruebas antes de empezar.</p>
+        </li>
+        <li class="step">
+          <span class="step-n">3</span>
+          <h3 data-i18n="step3.title">Construcción</h3>
+          <p data-i18n="step3.desc">Avances visibles. Código limpio, revisado y documentado.</p>
+        </li>
+        <li class="step">
+          <span class="step-n">4</span>
+          <h3 data-i18n="step4.title">Entrega + handoff</h3>
+          <p data-i18n="step4.desc">Sistema funcionando en tu infraestructura, con guía de uso y soporte inicial.</p>
+        </li>
+      </ol>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="section section-cta">
+      <div class="cta-inner">
+        <h2 class="cta-title" data-i18n="cta.title">¿Tienes un problema de datos o IA?</h2>
+        <p class="cta-sub" data-i18n="cta.sub">
+          Agenda una llamada de 20 minutos. Si puedo ayudarte, te lo digo. Si no,
+          te oriento hacia quién sí.
+        </p>
+        <div class="cta-actions">
+          <!-- Reemplaza el href con tu link de Cal.com -->
+          <a class="btn btn-primary btn-lg" id="bookCall" href="https://cal.com/" target="_blank" rel="noopener" data-i18n="cta.book">Agendar llamada</a>
+          <a class="btn btn-ghost btn-lg" id="emailMe" href="mailto:jonathan.sanchez.ep@gmail.com" data-i18n="cta.email">Escríbeme</a>
+        </div>
+        <p class="cta-fine" data-i18n="cta.fine">Respondo en menos de 24 h · Español / English</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-left">
+      <span class="brand-mark">JV</span>
+      <span data-i18n="footer.tagline">Forecasting &amp; AI · Energía · Telecom · Minería</span>
+    </div>
+    <div class="footer-right">
+      <a href="https://www.linkedin.com/in/jonasanchez" target="_blank" rel="noopener" id="linkedin" data-i18n="footer.linkedin">LinkedIn</a>
+      <a href="https://github.com/jsanchez-ds" target="_blank" rel="noopener" id="github">GitHub</a>
+      <span class="footer-copy">© <span id="year"></span> Jonathan V.</span>
+    </div>
+  </footer>
+
+  <script src="assets/app.js"></script>
+</body>
+</html>
